@@ -29,7 +29,7 @@ if ($status) {
 
     $users = new Users();
 
-    if ($users->userExist($_POST['username']))
+    if (!$users->userExist($_POST['username']))
     {
         if ($users->insert($_POST['username'], $_POST['pwd'], $_POST['email'])) {
             $message = "Регистрация прошла успешно";

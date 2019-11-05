@@ -17,13 +17,14 @@ if ($status) {
 
     $users = new Users();
 
-    if ($users->userExist($_POST['login'])){
+    if ($users->userExist($_POST['login']))
+    {
         if ($users->pwdCorrect($_POST['login'], $_POST['pwd']))
         {
             $message = "Авторизация прошла успешно";
         } else {
             $status = false;
-            $message = 'Не верный логин или пароль';
+            $message = 'Неверный логин или пароль';
         }
     } else {
         $status = false;
